@@ -9,7 +9,7 @@ export const getMovie=(slug='',forSearch)=>async dispatch=>{
         method:'GET'
     }
     let res=await dispatch(apiCall(dataReq))
-    if(get(res,'status')==200){
+    if(res.data.Response==="True"){
         dispatch(setLoadingSkeleton(false))
         dispatch({
             type:forSearch?actionType.SET_MOVIE_FOR_SEARCH:actionType.GET_MOVIE,
@@ -17,6 +17,7 @@ export const getMovie=(slug='',forSearch)=>async dispatch=>{
         })
         return res
     }else{
+        alert(res.data.Error)
         dispatch(setLoadingSkeleton(false))
     }
 }
@@ -27,7 +28,7 @@ export const getDetailMovie=(slug='')=>async dispatch=>{
         method:'GET'
     }
     let res=await dispatch(apiCall(dataReq))
-    if(get(res,'status')==200){
+    if(res.data.Response==="True"){
         dispatch(setLoading(false))
         dispatch({
             type:actionType.SET_MOVIE,
