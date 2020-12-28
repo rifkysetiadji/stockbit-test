@@ -1,6 +1,7 @@
 import React from 'react'
 import {sortBy} from 'lodash'
-export default function Anagram(strs=['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua']) {
+export default function Anagram() {
+    let strs=['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua']
     let result = {};
     for (let word of strs) {
         let words=word.split("")
@@ -11,8 +12,8 @@ export default function Anagram(strs=['kita', 'atik', 'tika', 'aku', 'kia', 'mak
         result[clean] = [word];
         }
     }
-    console.log('Object.values', Object.values(result))
+    console.log('Anagram result', Object.values(result))
 
-    return Object.values(result);
+    return <p>check console for result</p>;
     
 }

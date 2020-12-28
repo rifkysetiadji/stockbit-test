@@ -5,12 +5,16 @@ import store from './store'
 import Movie from 'views/Movie'
 import Loading from 'components/Loading'
 import Modal from 'components/Modal'
+import Anagram from 'views/Anagram'
+import Route from 'routes'
 function App() {
   return (
     <Provider store={store}>
       <Loading/>
       <Modal/>
-      <Movie/> 
+      {/* <Movie/>  */}
+      {/* <Anagram/> */}
+      <Route/>
     </Provider>
     
   );
